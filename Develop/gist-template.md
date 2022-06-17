@@ -1,10 +1,10 @@
 # Regex Tutorial
 
-Regex or regular expression is a form 
+Regex or regular expression is a way to parse a sting to validate input. Common instance of Regex usage is validating either email input, or a password.
 
 ## Summary
 
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+The Regex that I will be explaining is below. the code snippet is to test a password to meet security requirements. 
 ^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$
 
 ## Table of Contents
@@ -25,9 +25,15 @@ Briefly summarize the regex you will be describing and what you will explain. In
 
 ### Anchors
 
+The anchors of the regex code I am doing is the ^ $ charactes at the start and end of the regex snippet. 
+
 ### Quantifiers
 
+The quantifier of this regex snippet is {8,} the last part before the end anchor. What this snippet is testing for is the length of the password being at lest 8 characters. 
+
 ### OR Operator
+
+This regex code does not have an OR operator. But a OR operator in regex is done with with a single vertical bar '|' instead of two vertical bars '||' used as the OR operator in programming. 
 
 ### Character Classes
 
