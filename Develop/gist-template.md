@@ -25,7 +25,7 @@ The Regex that I will be explaining is below. the code snippet is to test a pass
 
 ### Anchors
 
-The anchors of the regex code I am doing is the ^ $ charactes at the start and end of the regex snippet. 
+The anchors are indicating the start and end of regex code. In this example the Anchors used are '^' and '$'. The '^' indicates a start of a regex code. '$' indicates the termination of a regex code 
 
 ### Quantifiers
 
