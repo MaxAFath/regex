@@ -4,7 +4,8 @@ Regex or regular expression is a way to parse a sting to validate input. Common 
 
 ## Summary
 
-The Regex that I will be explaining is below. the code snippet is to test a password to meet security requirements. 
+The Regex that I will be explaining is below. This regex snippet is to test if a password to meet security requirements. 
+
 ^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$
 
 ## Table of Contents
@@ -53,4 +54,6 @@ This regex code does not have an OR operator. But a OR operator in regex is done
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+My name is Max Fathauer. Learning web development practicies at the Case Western coding bootcamp. My Github is below if you want to see some of the other things I have done to learn and practice web development.
+https://github.com/MaxAFath
+
