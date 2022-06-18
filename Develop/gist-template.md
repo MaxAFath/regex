@@ -32,17 +32,38 @@ The anchors are indicating the start and end of regex code. In this example the 
 
 The quantifier of this regex snippet is `{8,}` the last part before the end anchor. What this snippet is testing for is the length of the password being at lest 8 characters. 
 
+Some of the more common quatifiers included the `*` in the `(?=.`**`*`**`?[A-Z])`
+
 ### OR Operator
 
 This regex code does not have an OR operator. But a OR operator in regex is done with with a single vertical bar `|` instead of two vertical bars `||` used as the OR operator in programming. 
 
 ### Character Classes
 
+Selecting character classes are done inside of `[]` in regex. In the regex snippet from the start there are 4 character classes we are looking for any capital letters, any lowercase letters, any numbers and specific symbols. 
+
+    1.(?=.*?[A-Z]) *Searching for all capital letters*
+    2.(?=.*?[a-z]) *Searchign for all lowercase letters*
+    3.(?=.*?[0-9]) *searchign for all numbers*
+    4.(?=.*?[#?!@$ %^&*-]) *Searching for these specific symbols and space*
+
+Other was to select characters is to select specific characters by not having characters inside `[]`'s but outside such as when doing a `@` symbol for a email. 
+
 ### Flags
+
+Unfortunatly there are no flags in this code snippet. But to explain what a flag is. A flag is one of six lower case letters that change the paramaters for a regex expression.
+
+1.  `i` Ignore Casing: makes a search case-insensitive
+2.  `g` Global: makes a search for all occurrences
+3.  `s` Dot All: makes the wild character `.` match newlines as well
+4.  `m` Multiline: maske boundy characters `^` and `$` match the new beginning and ending of every single line instead of the beginning and ending of the whole string
+5.  `y` Sticky: makes the expression start its searching for the index indicated in its `lastIndex` property
+6.  `u` Unicode: makes the expression assume individual charactes as code points
+
 
 ### Grouping and Capturing
 
-Capturing in regex is done inside of `()`, and grouping is done inside `[]`. In the code above that I am doing there are several capture and groupings.
+Capturing and grouping in regex is done inside of `()`. In the code above that I am doing there are several capture groups.
   
     1.(?=.*?[A-Z]) *Searching for all capital letters*
     2.(?=.*?[a-z]) *Searchign for all lowercase letters*
