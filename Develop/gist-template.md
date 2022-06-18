@@ -60,6 +60,7 @@ Unfortunatly there are no flags in this code snippet. But to explain what a flag
 5.  `y` Sticky: makes the expression start its searching for the index indicated in its `lastIndex` property
 6.  `u` Unicode: makes the expression assume individual charactes as code points
 
+A why I could have included in this to `(?=.i*?[a-z])` to search for any chacter a-z regarles of case. 
 
 ### Grouping and Capturing
 
@@ -72,13 +73,43 @@ Capturing and grouping in regex is done inside of `()`. In the code above that I
 
 ### Bracket Expressions
 
+Bracket expressions is used to match a single character or collecting element. An example from the regex expression is any time `[]` used in the regex snippet. Such as 
+
+    (?=.*?[A-Z])
+
+is a query to select any capitalized characters in the range of A-Z. 
+
 ### Greedy and Lazy Match
 
+Greedy match is looking at every position in a string and try to match the pattern until it reaches the end of the string. The most important note about greedy match is that it will match a string from the first matching character to the last matching character.
+
+Greedy match is denoted as
+
+    /.+/g
+
+Lazy match is the 'repeating minimal number of times'. The main difference of lazy match is instead of matching from the first instance of a character match to the last. Lazy matche goes from the first match of a specified character till it reaches a space, and will match at the next instance of a specified character.
+
+Lazy match is denoted as
+
+    /.?/g
+
+In the regex code snippet `^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$` only has lazy match since this is for a password.
+
 ### Boundaries
+
+Boundary search is denoted by `\b`word`\b`. It allows a "Whole words only" search using regex. In the regex code I breakiing down does not have a boundry in it. But to give an example of how boundary search works lets say you have this as your regex, `\bork\b` regex would search for only the word matching in the boundary and only that word in the boundary.
+
+    \bork\b
+
+    The orks of middle earth are very orky guys.
+
+this would not reaturn a match because it is only looking for words that match `ork` as the whole word.
 
 ### Back-references
 
 ### Look-ahead and Look-behind
+
+
 
 ## Author
 
