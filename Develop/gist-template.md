@@ -6,7 +6,7 @@ Regex or regular expression is a way to parse a sting to validate input. Common 
 
 The Regex that I will be explaining is below. This regex snippet is to test if a password to meet security requirements. 
 
-^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$
+    ^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$
 
 ## Table of Contents
 
@@ -93,7 +93,7 @@ Lazy match is denoted as
 
     /.?/g
 
-In the regex code snippet `^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$` only has lazy match since this is for a password.
+In the regex code snippet `^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$` is set up as lazy match. But it could be set up as a greedy match since it only needs to reach the end of the pass.
 
 ### Boundaries
 
@@ -103,13 +103,27 @@ Boundary search is denoted by `\b`word`\b`. It allows a "Whole words only" searc
 
     The orks of middle earth are very orky guys.
 
-this would not reaturn a match because it is only looking for words that match `ork` as the whole word.
+This would not reaturn a match because it is only looking for words that match `ork` as the whole word.
 
 ### Back-references
 
+Back-references work by matching text in a string that is the same text as previously matched by a capturing group. Again back-references are not in the regex code I am using since its for a password. Back refrences are most visiably used in HTML with open and closing tags.
+
+    <([A-Z]-[A-Z0-9]*)\b[^>]*>.*?</\1> 
+
+In the above regex code the `\1` towards the end is the back-reference. Something to note is that regex has a limit of capturing 99 groups. 
+
 ### Look-ahead and Look-behind
 
+Look-ahead regex is to look at the start of a line for the match. In the regex code I am using has only look-ahead instructions in it. 
 
+    ^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$
+
+Every `?=` is a look-ahead.
+
+Look-behind is similar to look-ahead but inseated of looking past the first match it looks at earlier sections of string for matches from string. Look-behind is denoted with `?<=`.
+
+Something to keep in mind about look-behind is that it is not supported in non-V8 browsers, such as Safari, Internet Explorer.
 
 ## Author
 
